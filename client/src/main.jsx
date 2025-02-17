@@ -3,6 +3,7 @@ import { LiveVisitorsComponent } from './components/LiveVisitorsComponent.jsx';
 import { PublicChatComponent } from './components/PublicChatComponent.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { RoomChatComponent } from './components/RoomChatComponent.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 import ReactDOM from 'react-dom/client';
 import './assets/output/main.min.css';
 import { App } from './App.jsx';
@@ -10,6 +11,7 @@ import { App } from './App.jsx';
 const router = createBrowserRouter([{
   path: '/',
   element: <App />,
+  errorElement: <ErrorPage />,
   children: [
     {
       index: true,
@@ -34,7 +36,4 @@ const router = createBrowserRouter([{
   ]
 }]);
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={router} />)

@@ -1,8 +1,12 @@
+// Importing Modules/Packages
 import { Row, Table, Container } from 'reactstrap';
+import { serverUrls } from '../helpers/helpers';
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:8000');
+const socket = io(serverUrls[0]);
+
+console.log(serverUrls)
 
 export const LiveVisitorsComponent = () => {
     const [Visitors, setVisitors] = useState([]);
@@ -10,6 +14,10 @@ export const LiveVisitorsComponent = () => {
         const fetchDataAndConnectSocket = async () => {
             try {
                 const response = await fetch('http://geoplugin.net/json.gp');
+                if(!response.ok) {
+                    console.error('There was an error trying to fetch this resource: http://geoplugin.net/json.gp');
+                    throw error;
+                }
                 const data = await response.json();
                 const userData = {
                     IP_Address: data.geoplugin_request,
@@ -19,9 +27,7 @@ export const LiveVisitorsComponent = () => {
                     Country: data.geoplugin_countryName
                 };
                 socket.emit('new_visted_user', userData);
-                socket.on('get_visitors', visitors => {
-                    setVisitors(visitors);
-                });
+                socket.on('get_visitors', visitors => setVisitors(visitors));
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

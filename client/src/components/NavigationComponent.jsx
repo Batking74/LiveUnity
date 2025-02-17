@@ -1,8 +1,9 @@
+// Importing Modules/Packages
 import { Collapse, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
 
 export const NavigationComponent = () => {
     const test = () => {
-        console.log('complete!');
+        console.log('navbar toggle working: complete!');
     }
     return (
         <nav>
@@ -11,15 +12,9 @@ export const NavigationComponent = () => {
                 <NavbarToggler onClick={test} />
                 <Collapse isOpen={true} navbar>
                     <Nav className="m-lg-auto">
-                        <NavItem>
-                            <NavLink href="/RoomChat">Room Chat</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/LiveVisitors">Live Visitors</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/PublicChat">Public Chat</NavLink>
-                        </NavItem>
+                        <NavItem><NavLink href="/RoomChat">Room Chat</NavLink></NavItem>
+                        <NavItem><NavLink href="/LiveVisitors">Live Visitors</NavLink></NavItem>
+                        <NavItem><NavLink href="/PublicChat">Public Chat</NavLink></NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

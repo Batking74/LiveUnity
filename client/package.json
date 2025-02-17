@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run sass && npm run build && vite",
+    "dev": "npm run build && vite --host",
     "build": "npm i && npm run sass && vite build",
-    "sass": "node-sass src/assets/main.sass src/assets/output/main.min.css --output-style compressed",
+    "sass": "sass src/assets/main.scss src/assets/output/main.min.css --no-source-map --style=compressed",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "node-sass": "^9.0.0",
+    "sass": "^1.79.4",
     "vite": "^5.2.0"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",

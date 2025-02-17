@@ -2,20 +2,20 @@
 const { Server } = require('socket.io');
 const PORT = process.env.PORT || 8000;
 const express = require('express');
-const app = express();
 const { join } = require('path');
+const app = express();
 
-app.use(express.static(join('../client')));
-
-app.get('/GraphQL', (req, res) => {
+app.get('/api/GraphQL', (req, res) => {
     res.json('Nazir!');
 });
 
-// Starting Server
-const expressServer = app.listen(PORT, () => {
-    console.log('Listening on port: ',PORT);
-});
+// Serve static files from the client/dist directory
+app.use(express.static(join(__dirname, '../client/dist')));
 
+app.get('*', (req, res) => res.sendFile(join(__dirname, '../client/dist/index.html')));
+
+// Starting Server
+const expressServer = app.listen(PORT, () => console.log('Listening on port: ', PORT));
 
 const getVisitors = () => {
     let visitors = [];
@@ -30,7 +30,7 @@ const emitToVisitors = () => {
     io.emit('get_visitors', getVisitors());
 }
 
-const io = new Server(expressServer, { cors: 'http://localhost:5173' });
+const io = new Server(expressServer, { cors: ['http://localhost:4001', 'http://localhost:8000'] });
 
 io.on('connection', socket => {
     console.log('A user connected!');
@@ -39,7 +39,7 @@ io.on('connection', socket => {
         socket.user = user;
         emitToVisitors();
     });
-    
+
     socket.on('disconnect', e => {
         emitToVisitors();
         console.log('A user disconnected');

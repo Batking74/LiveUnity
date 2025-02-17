@@ -2,8 +2,8 @@
 const { Server } = require('socket.io');
 const PORT = process.env.PORT || 9000;
 const express = require('express');
-const app = express();
 const { join } = require('path');
+const app = express();
 
 app.use(express.static(join('../client')));
 
@@ -13,7 +13,7 @@ const expressServer = app.listen(PORT, () => {
 });
 
 const io = new Server(expressServer, {
-    cors: 'http://localhost:5173'
+    cors: ['http://localhost:4001', 'http://localhost:8000']
 });
 
 const getRooms = () => {

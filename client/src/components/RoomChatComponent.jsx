@@ -1,26 +1,19 @@
+// Importing Modules/Packages
 import { Input, Table, Row, Col, Button, Container } from 'reactstrap';
+import { serverUrls } from '../helpers/helpers';
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:9000');
-
-
+const socket = io(serverUrls[1]);
 
 export const RoomChatComponent = () => {
     const [Rooms, setRooms] = useState([]);
     const [RoomName, setRoomName] = useState();
-    const joinRoom = ({ target }) => {
-        socket.emit('join_room', {
-            RoomName
-        });
-    }
+    const joinRoom = ({ target }) => socket.emit('join_room', { RoomName });
 
     useEffect(() => {
-        socket.on('get_rooms', rooms => {
-            setRooms(rooms);
-        });
-    }, []);
-    console.log(Rooms)
+        socket.on('get_rooms', rooms => setRooms(rooms)), []
+    });
 
     return (
         <main style={{ textAlign: 'center' }}>
