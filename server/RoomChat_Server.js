@@ -13,7 +13,7 @@ const expressServer = app.listen(PORT, () => {
 });
 
 const io = new Server(expressServer, {
-    cors: ['http://localhost:3000', 'http://localhost:8000']
+    cors: ['http://localhost:3000', 'http://localhost:6000']
 });
 
 const getRooms = () => {

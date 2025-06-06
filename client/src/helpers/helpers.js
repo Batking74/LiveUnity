@@ -1,4 +1,4 @@
-export let serverUrls = [ 'http://localhost:8000', 'http://localhost:9000' ]
+export let serverUrls = [ 'http://localhost:6000', 'http://localhost:9000' ]
 
 if(location.hostname != 'localhost') {
     serverUrls = [

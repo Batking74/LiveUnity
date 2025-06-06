@@ -12,7 +12,7 @@ const expressServer = app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);
 });
 
-const io = new Server(expressServer, { cors: ['http://localhost:3000', 'http://localhost:8000'] });
+const io = new Server(expressServer, { cors: ['http://localhost:3000', 'http://localhost:6000'] });
 
 
 const getOnlineUsers = () => {
