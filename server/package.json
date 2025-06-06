@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "npm i && concurrently \"nodemon server1.js\" \"nodemon server2.js\" \"nodemon server3.js\""
+    "dev": "npm i && concurrently \"nodemon server.js\" \"nodemon RoomChat_Server.js\" \"nodemon PublicChat_Server.js\"",
+    "servers": "npm i && concurrently \"node server.js\" \"node RoomChat_Server.js\" \"node PublicChat_Server.js\""
   },
   "keywords": [],
   "author": "",

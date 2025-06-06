@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run build && vite --host",
+    "dev": "npm run build && vite",
     "build": "npm i && npm run sass && vite build",
-    "sass": "sass src/assets/main.scss src/assets/output/main.min.css --no-source-map --style=compressed",
-    "preview": "vite preview"
+    "sass": "sass src/assets/main.scss src/assets/output/main.min.css --no-source-map --style=compressed"
   },
   "dependencies": {
     "@apollo/client": "^3.9.11",

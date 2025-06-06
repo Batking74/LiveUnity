@@ -27,18 +27,3 @@
 Deployed Application: 
 
 GitHub Repo: https://github.com/Batking74/LiveUnity
-
-
-
-
-docker build -t batking74/liveunity:1.0 .
-
-<!-- Run Each server in a container from the image -->
-docker run -d --name server1 -p 8000:8000 
-docker run -d --name server2 -p 7000:7000 
-docker run -d --name server3 -p 9000:9000 
-
-docker push batking74/liveunity:1.0
-
-
-docker-compose up

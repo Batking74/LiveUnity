@@ -30,7 +30,7 @@ const emitToVisitors = () => {
     io.emit('get_visitors', getVisitors());
 }
 
-const io = new Server(expressServer, { cors: ['http://localhost:4001', 'http://localhost:8000'] });
+const io = new Server(expressServer, { cors: ['http://localhost:3000', 'http://localhost:8000'] });
 
 io.on('connection', socket => {
     console.log('A user connected!');

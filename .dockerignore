@@ -1,25 +1,15 @@
-package-lock.json
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
+.vscode
+README.md
 node_modules
-dist-ssr
-*.local
-.env
+package-lock.json
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Client
+/client/dist
+/client/node_modules
+/client/package-lock.json
+
+# Server
+/server/.env
+/server/.env.me
+/server/node_modules
+/server/package-lock.json
