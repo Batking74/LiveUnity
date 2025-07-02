@@ -2,10 +2,15 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: LiveUnity-Production
+    container_name: Liveunity-Production
     ports:
-      - '7000:7000'
+      - '1000:1000'
       - '6000:6000'
       - '9000:9000'
+    networks:
+      - my-shared-network
     # env_file:
     #   - ./server/.env
+networks:
+  my-shared-network:
+    external: true

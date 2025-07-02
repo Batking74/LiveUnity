@@ -2,14 +2,15 @@
 README.md
 node_modules
 package-lock.json
+Nazirs Live Unity Project - 2023-1.webp
 
 # Client
-/client/dist
-/client/node_modules
-/client/package-lock.json
+client/*
+!client/public/
+!client/dist/
 
 # Server
-/server/.env
 /server/.env.me
+/server/.env.previous
 /server/node_modules
 /server/package-lock.json

@@ -1,6 +1,6 @@
 // Importing Modules/Packages
 const { Server } = require('socket.io');
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 6000;
 const express = require('express');
 const { join } = require('path');
 const app = express();
@@ -12,7 +12,7 @@ const expressServer = app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);
 });
 
-const io = new Server(expressServer, { cors: ['http://localhost:3000', 'http://localhost:6000'] });
+const io = new Server(expressServer, { cors: ['https://liveunity.nazirsportfolio.com', 'http://localhost:3000', 'http://localhost:1000'] });
 
 
 const getOnlineUsers = () => {

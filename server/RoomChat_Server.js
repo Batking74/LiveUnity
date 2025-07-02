@@ -13,7 +13,7 @@ const expressServer = app.listen(PORT, () => {
 });
 
 const io = new Server(expressServer, {
-    cors: ['http://localhost:3000', 'http://localhost:6000']
+    cors: ['https://liveunity.nazirsportfolio.com', 'http://localhost:3000', 'http://localhost:1000']
 });
 
 const getRooms = () => {

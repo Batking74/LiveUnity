@@ -1,6 +1,6 @@
 // Importing Modules/Packages
 const { Server } = require('socket.io');
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 1000;
 const express = require('express');
 const { join } = require('path');
 const app = express();
@@ -30,7 +30,7 @@ const emitToVisitors = () => {
     io.emit('get_visitors', getVisitors());
 }
 
-const io = new Server(expressServer, { cors: ['http://localhost:3000', 'http://localhost:6000'] });
+const io = new Server(expressServer, { cors: ['https://liveunity.nazirsportfolio.com', 'http://localhost:3000', 'http://localhost:1000'] });
 
 io.on('connection', socket => {
     console.log('A user connected!');

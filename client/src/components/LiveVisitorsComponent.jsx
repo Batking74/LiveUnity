@@ -6,8 +6,6 @@ import { io } from 'socket.io-client';
 
 const socket = io(serverUrls[0]);
 
-console.log(serverUrls)
-
 export const LiveVisitorsComponent = () => {
     const [Visitors, setVisitors] = useState([]);
     useEffect(() => {

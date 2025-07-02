@@ -12,18 +12,20 @@
 ##  Performance Reports
 
 # Technologies and Tools Used
-
 - HTML
 - CSS
-- JavaScript
+- Sass/Scss
+- Javascript
 - React
 - Vite
-- Node.js
-- Docker
-- Socket.io
 - Express
+- Node.js
+- Linux (Ubuntu)
+- Cloudflare CDN
+- Nginx
+- Progressive Web App (PWA)
 
 
-Deployed Application: 
+Deployed Application: https://liveunity.nazirsportfolio.com
 
 GitHub Repo: https://github.com/Batking74/LiveUnity
