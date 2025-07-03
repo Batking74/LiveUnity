@@ -14,3 +14,15 @@ client/*
 /server/.env.previous
 /server/node_modules
 /server/package-lock.json
+
+# Public Chat
+/server/PublicChat/.env.me
+/server/PublicChat/.env.previous
+/server/PublicChat/node_modules
+/server/PublicChat/package-lock.json
+
+# Room Chat
+/server/RoomChat/.env.me
+/server/RoomChat/.env.previous
+/server/RoomChat/node_modules
+/server/RoomChat/package-lock.json

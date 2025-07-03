@@ -8,6 +8,6 @@ RUN npm i
 
 COPY . .
 
-EXPOSE 1000
+EXPOSE 6000
 
 CMD ["npm", "start"]

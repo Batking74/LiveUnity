@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "npm i && concurrently \"nodemon server.js\" \"nodemon RoomChat_Server.js\" \"nodemon PublicChat_Server.js\"",
-    "servers": "npm i && concurrently \"node server.js\" \"node RoomChat_Server.js\" \"node PublicChat_Server.js\""
+    "dev": "npm i && concurrently \"nodemon server.js\" \"nodemon ./RoomChat/RoomChat_Server.js\" \"nodemon ./PublicChat/PublicChat_Server.js\"",
+    "servers": "npm i && concurrently \"node server.js\" \"cd RoomChat && npm start\" \"cd PublicChat && npm start\"",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,16 @@
+{
+  "name": "publicchat",
+  "version": "1.0.0",
+  "main": "PublicChat_Server.js",
+  "scripts": {
+    "start": "node PublicChat_Server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}

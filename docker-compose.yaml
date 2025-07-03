@@ -1,12 +1,28 @@
 version: '3.8'
 services:
-  app:
+  main-app:
     build: .
-    container_name: Liveunity-Production
+    container_name: Liveunity-Main-Production
     ports:
       - '1000:1000'
-      - '6000:6000'
+    networks:
+      - my-shared-network
+    # env_file:
+    #   - ./server/.env
+  roomchat:
+    build: ./server/RoomChat
+    container_name: Liveunity-Roomchat-Production
+    ports:
       - '9000:9000'
+    networks:
+      - my-shared-network
+    # env_file:
+    #   - ./server/.env
+  publicchat:
+    build: ./server/PublicChat
+    container_name: Liveunity-Public-Chat-Production
+    ports:
+      - '6000:6000'
     networks:
       - my-shared-network
     # env_file:
