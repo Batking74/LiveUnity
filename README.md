@@ -1,5 +1,7 @@
 # LiveUnity
 
+## Description
+
 ![Nazirs Live Unity Project](./Nazirs%20Live%20Unity%20Project%20-%202023-1.webp)
 
 ##  My Motivation
@@ -11,18 +13,16 @@
 
 ##  Performance Reports
 
-# Technologies and Tools Used
+## Technologies and Tools Used
 - HTML
-- CSS
 - Sass/Scss
+- React/Vite
 - Javascript
-- React
-- Vite
-- Express
-- Node.js
-- Linux (Ubuntu)
-- Cloudflare CDN
+- Node.js/Express
+- Docker
 - Nginx
+- Cloudflare CDN
+- Linode/Linux (Ubuntu)
 - Progressive Web App (PWA)
 
 

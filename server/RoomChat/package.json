@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "RoomChat_Server.js",
   "scripts": {
-    "start": "node RoomChat_Server.js"
+    "start": "npm i && node RoomChat_Server.js"
   },
   "keywords": [],
   "author": "",

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "PublicChat_Server.js",
   "scripts": {
-    "start": "node PublicChat_Server.js"
+    "start": "npm i && node PublicChat_Server.js"
   },
   "keywords": [],
   "author": "",

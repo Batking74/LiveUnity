@@ -5,14 +5,10 @@ const express = require('express');
 const { join } = require('path');
 const app = express();
 
-app.get('/api/GraphQL', (req, res) => {
-    res.json('Nazir!');
-});
-
 // Serve static files from the client/dist directory
 app.use(express.static(join(__dirname, '../client/dist')));
 
-app.get('*', (req, res) => res.sendFile(join(__dirname, '../client/dist/index.html')));
+app.get(/^\/(?!socket\.io)(?!api).*/, (req, res) => res.sendFile(join(__dirname, '../client/dist/index.html')));
 
 // Starting Server
 const expressServer = app.listen(PORT, () => console.log('Listening on port: ', PORT));

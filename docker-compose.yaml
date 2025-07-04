@@ -16,19 +16,19 @@ services:
       - '9000:9000'
     networks:
       - my-shared-network
-    depends_on:
-      - publicchat
+    # depends_on:
+    #   - publicchat
     # env_file:
     #   - ./server/.env
-  publicchat:
-    build: ./server/PublicChat
-    container_name: Liveunity-Public-Chat-Production
-    ports:
-      - '6000:6000'
-    networks:
-      - my-shared-network
-    depends_on:
-      - main-app
+  # publicchat:
+  #   build: ./server/PublicChat
+  #   container_name: Liveunity-Public-Chat-Production
+  #   ports:
+  #     - '6000:6000'
+  #   networks:
+  #     - my-shared-network
+  #   depends_on:
+  #     - main-app
     # env_file:
     #   - ./server/.env
 networks:

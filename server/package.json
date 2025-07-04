@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm i && concurrently \"nodemon server.js\" \"nodemon ./RoomChat/RoomChat_Server.js\" \"nodemon ./PublicChat/PublicChat_Server.js\"",
     "servers": "npm i && concurrently \"node server.js\" \"cd RoomChat && npm start\" \"cd PublicChat && npm start\"",
-    "start": "node server.js"
+    "start": "npm i && node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "graphql": "^16.8.1",
+    "express": "^5.1.0",
     "mongoose": "^8.3.1",
     "socket.io": "^4.7.5"
   },

@@ -1,0 +1,8 @@
+.env.me
+.gitignore
+.env.vault
+Dockerfile
+.env.previous
+node_modules
+.dockerignore
+package-lock.json
