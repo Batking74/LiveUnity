@@ -17,9 +17,7 @@ export const LiveVisitorsComponent = () => {
                     throw error;
                 }
                 const data = await response.json();
-                console.log(data)
                 const userData = {
-                    IP_Address: data.ip,
                     Flag: data.flag.img,
                     City: data.city,
                     State: data.region,
@@ -42,9 +40,9 @@ export const LiveVisitorsComponent = () => {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>IP</th>
-                            <th>Flag</th>
+                            {/* <th>Hold</th> */}
                             <th>City</th>
+                            <th>Flag</th>
                             <th>State</th>
                             <th>Country</th>
                         </tr>
@@ -56,9 +54,9 @@ export const LiveVisitorsComponent = () => {
                                     return (
                                         <tr key={index}>
                                             <th>{index + 1}</th>
-                                            <td>{visitor.IP_Address}</td>
-                                            <td><img style={{ width: 70 }} src={visitor.Flag} alt="Flag" /></td>
+                                            {/* <td>{}</td> */}
                                             <td>{visitor.City}</td>
+                                            <td><img style={{ width: 70 }} src={visitor.Flag} alt="Flag" /></td>
                                             <td>{visitor.State}</td>
                                             <td>{visitor.Country}</td>
                                         </tr>

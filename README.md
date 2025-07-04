@@ -2,7 +2,7 @@
 
 ## Description
 
-![Nazirs Live Unity Project](./Nazirs%20Live%20Unity%20Project%20-%202023-1.webp)
+![Nazirs Live Unity Project](./Nazirs%20Live%20Unity%20Project%20-%202023.webp)
 
 ##  My Motivation
 
