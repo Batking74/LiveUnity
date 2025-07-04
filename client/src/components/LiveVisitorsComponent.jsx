@@ -11,18 +11,19 @@ export const LiveVisitorsComponent = () => {
     useEffect(() => {
         const fetchDataAndConnectSocket = async () => {
             try {
-                const response = await fetch('http://geoplugin.net/json.gp');
+                const response = await fetch('https://ipwho.is');
                 if(!response.ok) {
-                    console.error('There was an error trying to fetch this resource: http://geoplugin.net/json.gp');
+                    console.error('There was an error trying to fetch this resource: https://ipwho.is');
                     throw error;
                 }
                 const data = await response.json();
+                console.log(data)
                 const userData = {
-                    IP_Address: data.geoplugin_request,
-                    Flag: `https://flagsapi.com/${data.geoplugin_countryCode}/flat/64.png`,
-                    City: data.geoplugin_city,
-                    State: data.geoplugin_regionName,
-                    Country: data.geoplugin_countryName
+                    IP_Address: data.ip,
+                    Flag: data.flag.img,
+                    City: data.city,
+                    State: data.region,
+                    Country: data.country
                 };
                 socket.emit('new_visted_user', userData);
                 socket.on('get_visitors', visitors => setVisitors(visitors));
@@ -56,7 +57,7 @@ export const LiveVisitorsComponent = () => {
                                         <tr key={index}>
                                             <th>{index + 1}</th>
                                             <td>{visitor.IP_Address}</td>
-                                            <td><img src={visitor.Flag} alt="Flag" /></td>
+                                            <td><img style={{ width: 70 }} src={visitor.Flag} alt="Flag" /></td>
                                             <td>{visitor.City}</td>
                                             <td>{visitor.State}</td>
                                             <td>{visitor.Country}</td>
