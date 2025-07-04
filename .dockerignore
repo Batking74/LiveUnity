@@ -7,7 +7,7 @@ node_modules
 .dockerignore
 package-lock.json
 docker-compose.yaml
-Nazirs Live Unity Project - 2023-1.webp
+Nazirs Live Unity Project - 2023.webp
 
 # Client
 client/*
